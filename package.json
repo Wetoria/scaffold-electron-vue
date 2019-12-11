@@ -1,5 +1,5 @@
 {
-  "name": "balance-sheet",
+  "name": "scaffold-electron-vue",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -27,6 +27,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
     "chromedriver": "78",
+    "electron": "^7.1.4",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "geckodriver": "^1.19.1",

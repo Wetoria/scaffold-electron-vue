@@ -1,4 +1,4 @@
-# balance-sheet
+# scaffold-electron-vue
 
 ## Project setup
 ```
