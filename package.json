@@ -7,15 +7,15 @@
   "scripts": {
     "start": "nf start",
     "electron": "electron .",
+    "pack": "electron-builder --mac --dir -c.extraMetadata.main=dist/electron-starter.js",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && cp src/electron-starter.js dist/electron-starter.js",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.4.3",
-    "electron": "^7.1.4",
     "element-ui": "^2.13.0",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",
@@ -31,6 +31,7 @@
     "@vue/cli-service": "^4.1.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "electron": "^7.1.4",
     "babel-eslint": "^10.0.3",
     "chromedriver": "78",
     "eslint": "^5.16.0",
@@ -40,5 +41,28 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "build": {
+    "productName": "the-balance-sheet",
+    "appId": "com.v.bs",
+    "copyright": "vip",
+    "directories": {
+      "output": "build",
+      "buildResources": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    }
   }
 }
