@@ -6,14 +6,12 @@
   "main": "src/electron-starter.js",
   "scripts": {
     "start": "nf start",
-    "electron": "npm run electron-mac",
+    "electron": "electron .",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
-    "electron-mac": "NODE_ENV=development electron .",
-    "electron-win": "set NODE_ENV=development && electron ."
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.4.3",
