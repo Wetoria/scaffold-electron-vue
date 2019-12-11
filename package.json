@@ -2,6 +2,7 @@
   "name": "scaffold-electron-vue",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "main": "src/electron-starter.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,7 +10,8 @@
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "electron": "electron ."
+    "electron-mac": "ELECTRON_START_URL=http://localhost:8080 electron .",
+    "electron-win": "set ELECTRON_START_URL=http://localhost:8080 && electron ."
   },
   "dependencies": {
     "core-js": "^3.4.3",

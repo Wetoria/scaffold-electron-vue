@@ -1,5 +1,7 @@
 // 引入electron并创建一个Browserwindow
 const { app, BrowserWindow } = require('electron');
+const path = require('path');
+const url = require('url');
 // const url = require('url');
 // const path = require('path');
 
@@ -20,16 +22,17 @@ function createWindow() {
     },
   });
 
-  // mainWindow.loadURL(url.format({
-  //   pathname: path.join(__dirname, './index.html'), // 注意这里修改
-  //   protocol: 'file:',
-  //   slashes: true
-  // }));
+  const isDevelopment = !!process.env.ELECTRON_START_URL;
 
-  mainWindow.loadURL('http://localhost:8080');
+  const startUrl = process.env.ELECTRON_START_URL || url.format({
+    pathname: path.join(__dirname, '/../dist/index.html'),
+    protocol: 'file:',
+    slashes: true,
+  });
+  mainWindow.loadURL(startUrl);
 
   // 打开开发者工具，默认不打开
-  mainWindow.webContents.openDevTools();
+  isDevelopment && mainWindow.webContents.openDevTools();
   // 关闭window时触发下列事件.
   mainWindow.on('closed', () => {
     mainWindow = null;
