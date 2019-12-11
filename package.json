@@ -5,14 +5,15 @@
   "homepage": "./",
   "main": "src/electron-starter.js",
   "scripts": {
-    "start": "npm run serve",
+    "start": "nf start",
+    "electron": "npm run electron-mac",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "electron-mac": "ELECTRON_START_URL=http://localhost:8080 electron .",
-    "electron-win": "set ELECTRON_START_URL=http://localhost:8080 && electron ."
+    "electron-mac": "NODE_ENV=development electron .",
+    "electron-win": "set NODE_ENV=development && electron ."
   },
   "dependencies": {
     "core-js": "^3.4.3",
@@ -35,6 +36,7 @@
     "chromedriver": "78",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "foreman": "^3.0.1",
     "geckodriver": "^1.19.1",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0",
