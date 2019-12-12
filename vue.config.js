@@ -12,6 +12,8 @@ module.exports = {
       .set('@', resolve('src'))
       .set('@components', resolve('src/common/components'))
       .set('@pages', resolve('src/pages'))
+      .set('@router', resolve('src/common/router'))
+      .set('@store', resolve('src/common/store'))
       .set('@common', resolve('src/common'))
       .set('@assets', resolve('src/common/assets'));
   },
